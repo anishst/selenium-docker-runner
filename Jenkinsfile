@@ -8,12 +8,13 @@ pipeline{
 		}
 		stage("Start Grid"){
 			steps{
+				// start hub and nodes only; this is prevent jenkins job from hanging
 				sh "docker-compose up -d hub chrome firefox"
 			}
 		}
 		stage("Run Test"){
 			steps{
-				// show only logs for the test modules
+				// Grid is already running; now Run tests and show only logs for the test modules
 				sh "docker-compose up saucedemo-module duck-search-module"
 			}
 		}
