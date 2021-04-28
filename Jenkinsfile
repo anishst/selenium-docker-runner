@@ -16,7 +16,6 @@ pipeline{
 			steps{
 				// Grid is already running; now Run tests and show only logs for the test modules
 				sh "docker-compose up saucedemo-module duck-search-module"
-				archiveArtifacts artifacts: 'reports/**', fingerprint: true
 			}
 		}
 	}
