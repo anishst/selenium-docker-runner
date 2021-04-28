@@ -21,7 +21,7 @@ pipeline{
 	post{
 		always{
 			sh "ls -R"
-			archiveArtifacts artifacts: 'reports/**' // NOT WORKING
+			// archiveArtifacts artifacts: 'reports/**' // NOT WORKING
 			sh "docker-compose down"
 			// sh "sudo rm -rf reports/"
 		}
