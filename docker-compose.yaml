@@ -19,6 +19,7 @@ services:
       - HUB_HOST=hub
   #  1st test set
   saucedemo-module:
+    # https://hub.docker.com/repository/docker/anishst/selenium-docker
     image: anishst/selenium-docker
     depends_on:
       - chrome
